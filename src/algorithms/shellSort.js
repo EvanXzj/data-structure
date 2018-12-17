@@ -14,9 +14,13 @@ function  shellSort(arr) {
             }
             arr[j] = temp
         }
-        console.log('%O   // gap %d', arr, gap)
+        // console.log('%O   // gap %d', arr, gap)
     }
+
+    return arr
 }
 
 const array = [61, 85, 19, 88, 68, 8, 70, 29]
-shellSort(array)
+const sortedArray = shellSort(array)
+
+console.log(sortedArray) // [ 8, 19, 29, 61, 68, 70, 85, 88 ]
