@@ -18,7 +18,6 @@ function insertionSort(arr) {
     return arr
 }
 
-
 const array = [61, 85, 19, 88, 68, 8, 70, 29]
 const sortedArray = insertionSort(array)
 
