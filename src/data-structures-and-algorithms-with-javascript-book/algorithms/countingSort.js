@@ -1,6 +1,6 @@
 /**
  * @description 计数排序
- * @param {Array} arr 
+ * @param {Array} arr
  */
 function countingSort(arr) {
     const len = arr.length
@@ -39,7 +39,7 @@ function countingSortV2(arr) {
     for (let i = 0; i < arrLen; ++i) {
         bucket[arr[i]]++
     }
-    
+
     for (let j = 0; j < bucketLen; ++j) {
         while(bucket[j] > 0) {
             arr[sortedIndex++] = j

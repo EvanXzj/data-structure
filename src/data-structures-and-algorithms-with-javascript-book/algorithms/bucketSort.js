@@ -1,8 +1,8 @@
 const bubbleSort = require('./bubbleSort')
 /**
  * @description 桶排序
- * @param {Array} arr 
- * 
+ * @param {Array} arr
+ *
  * @returns {Array} arr
  */
 function bucketSort(arr, bucketSize) {
@@ -11,7 +11,7 @@ function bucketSort(arr, bucketSize) {
     if (arr.length === 0) {
         return  arr
     }
-    
+
     const minValue = Math.min(...arr)
     const maxValue = Math.max(...arr)
 
