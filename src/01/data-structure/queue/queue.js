@@ -4,57 +4,59 @@
  * 是一种先入先出（FIFO, First-In-First-Out）的数据结构
  */
 
-class Queue {
+class StudyQueue {
     constructor() {
-        this.datastore = []
+        this.dataStore = []
     }
 
     enqueue(element) {
-        this.datastore.push(element)
+        this.dataStore.push(element)
     }
 
     dequeue() {
-        return this.datastore.shift()
+        return this.dataStore.shift()
     }
 
     // 获取队首的元素
     front() {
-        return this.datastore[0]
+        return this.dataStore[0]
     }
 
     //获取队尾的元素
     back() {
-        return this.datastore[this.datastore.length - 1]
+        return this.dataStore[this.dataStore.length - 1]
     }
 
-    print() {
-        let str = ''
-        for (let val of this.datastore) {
-            str += `${val}\n`
-        }
-
-        return str
+    print(sep = ',') {
+        console.log(this.dataStore.join(sep))
     }
 
     // 判断队列是否为空
     isEmpty() {
-        return this.datastore.length <= 0
+        return this.dataStore.length === 0
     }
 }
 
-const log = console.log
+module.exports = StudyQueue
 
-const queue = new Queue()
-queue.enqueue('Meredith')
-queue.enqueue('Cynthia')
-queue.enqueue('Jennifer')
-log(queue.print())
-const dequeued = queue.dequeue()
-log('dequeued: %s\n', dequeued)
-log(queue.print())
-log(`Front of queue: ${queue.front()}`)
-log(`Back of queue: ${queue.back()}`)
+// const log = console.log
+// const queue = new StudyQueue()
 
-/**
- * 优先队列，为每个元素设置权重，出队的时候按权重大的优先出列。
- */
+// queue.enqueue('Meredith')
+// queue.enqueue('Cynthia')
+// queue.enqueue('Jennifer')
+// queue.print()
+
+// const dequeued = queue.dequeue()
+// log('dequeued: %s\n', dequeued)
+// queue.print(' | ')
+// log(`Front of queue: ${queue.front()}`)
+// log(`Back of queue: ${queue.back()}`)
+
+// // Output:
+// // Meredith,Cynthia,Jennifer
+// // dequeued: Meredith
+
+// // Cynthia | Jennifer
+// // Front of queue: Cynthia
+// // Back of queue: Jennifer
