@@ -79,23 +79,28 @@ class DoubleLinkedList {
     }
 }
 
-const log = console.log
-const cities = new DoubleLinkedList()
-cities.insertAfter('A', 'head')
-cities.insertAfter('B', 'A')
-cities.insertAfter('C', 'B')
-cities.display()
-log()
-cities.displayReverse()
+module.export = {
+    Node,
+    DoubleLinkedList
+}
 
-log()
-cities.remove('B')
-cities.display()
-log()
-cities.displayReverse()
+// const log = console.log
+// const cities = new DoubleLinkedList()
+// cities.insertAfter('A', 'head')
+// cities.insertAfter('B', 'A')
+// cities.insertAfter('C', 'B')
+// cities.display()
+// log()
+// cities.displayReverse()
 
-log()
-cities.insertAfter('B', 'A')
-cities.display()
-log()
-cities.displayReverse()
+// log()
+// cities.remove('B')
+// cities.display()
+// log()
+// cities.displayReverse()
+
+// log()
+// cities.insertAfter('B', 'A')
+// cities.display()
+// log()
+// cities.displayReverse()

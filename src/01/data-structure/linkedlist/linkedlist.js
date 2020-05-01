@@ -75,14 +75,27 @@ class LinkedList {
     }
 }
 
-const log = console.log
-const cities = new LinkedList()
-cities.insertAfter('Conway', 'head')
-cities.insertAfter('Russelliville', 'Conway')
-cities.insertAfter('Carlisle', 'Russelliville')
-cities.insertAfter('Alma', 'Carlisle')
-cities.display()
-cities.remove('Carlisle')
-log()
-cities.display()
-log(cities.isLoopCheck())
+module.exports = LinkedList
+
+// const log = console.log
+// const cities = new LinkedList()
+// cities.insertAfter('Conway', 'head')
+// cities.insertAfter('Russelliville', 'Conway')
+// cities.insertAfter('Carlisle', 'Russelliville')
+// cities.insertAfter('Alma', 'Carlisle')
+// cities.display()
+// cities.remove('Carlisle')
+// log()
+// cities.display()
+// log(cities.isLoopCheck())
+
+// Output:
+// Conway
+// Russelliville
+// Carlisle
+// Alma
+
+// Conway
+// Russelliville
+// Alma
+// false
