@@ -6,7 +6,7 @@ function selectionSort(arr) {
         minIndex = i
         for (let j = i + 1; j < len; ++j) {
             if (arr[j] < arr[minIndex]) { // 寻找最小的数
-               minIndex = j
+                minIndex = j
             }
         }
         temp = arr[i]
