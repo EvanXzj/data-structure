@@ -1,8 +1,9 @@
-## Description
+# Description
 
 该目录下的代码都是参考《数据结构与算法JavaScript描述》一书来实现的
 
 ## 数组的一些常用实例方法
+
 - push
 
 ```js
