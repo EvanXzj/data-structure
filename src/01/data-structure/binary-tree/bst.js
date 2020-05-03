@@ -1,3 +1,7 @@
+// TODO: 完成层序遍历（递归方式）、使用栈来完成遍历
+const Stack = require('../stack/stack.js')
+const Queue = require('../queue/queue.js')
+
 class Node {
     constructor(data, left, right) {
         this.data = data
@@ -14,6 +18,8 @@ class BinarySearchTree {
     constructor() {
         this.root = null
         this.knots = 0 // 节点数
+        this.stack = new Stack() // 使用stack来完成前、中、后序遍历
+        this.queue = new Queue() // 使用队列完成层序遍历
     }
 
     /**
@@ -63,12 +69,32 @@ class BinarySearchTree {
         }
     }
 
-    // 先序遍历
+    // 先序遍历（递归）
     preOrder(node) {
         if (node != null) {
             console.log(node.showData())
             this.preOrder(node.left)
             this.preOrder(node.right)
+        }
+    }
+
+    // 前序遍历（Stack）
+    preOrderWithStack() {
+        let currNode = this.root
+
+        while(currNode != null || !this.stack.isEmpty()) {
+            // 迭代访问节点的左孩子，并入栈
+            while(currNode != null) {
+                console.log(currNode.data)
+                this.stack.push(currNode)
+                currNode = currNode.left
+            }
+
+            // 如果节点没有左孩子则弹出栈顶节点，访问节点右孩子
+            if(!this.stack.isEmpty()) {
+                currNode = this.stack.pop()
+                currNode = currNode.right
+            }
         }
     }
 
@@ -78,6 +104,23 @@ class BinarySearchTree {
             this.postOrder(node.left)
             this.postOrder(node.right)
             console.log(node.showData())
+        }
+    }
+
+    // 层序遍历： 按照根节点到叶子节点的层次关系，一层一层横向遍历所有节点。
+    levelOrder() {
+        this.queue.enqueue(this.root)
+        while(!this.queue.isEmpty()) {
+            const node = this.queue.dequeue()
+            console.log(node.data)
+
+            if (node.left != null) {
+                this.queue.enqueue(node.left)
+            }
+
+            if (node.right != null) {
+                this.queue.enqueue(node.right)
+            }
         }
     }
 
@@ -200,6 +243,7 @@ module.exports = BinarySearchTree
 
 // bst.inOrder(bst.root) // 3 16 22 23 37 45 99
 // bst.preOrder(bst.root) // 23 16 3 22 45 37 99
+// bst.preOrderWithStack() // 23 16 3 22 45 37 99
 // bst.postOrder(bst.root) // 3 22 16 37 99 45 23
 
 // console.log(bst.getMin()) // 3
@@ -227,3 +271,20 @@ module.exports = BinarySearchTree
 // console.log(bst.getTreeDepth(bst.root)) // 1
 // bst.remove(23)
 // console.log(bst.getTreeDepth(bst.root)) // 0
+
+// const bst1 = new BinarySearchTree()
+// bst1.insert(23)
+// bst1.insert(45)
+// bst1.insert(16)
+// bst1.insert(37)
+// bst1.insert(3)
+// bst1.insert(99)
+// bst1.insert(22)
+
+// // bst1 Tree:
+// /**
+//  *               23
+//  *           16        45
+//  *        3     22  37     99
+//  */
+// bst1.levelOrder() // 23 16 45 3 22 37 99
