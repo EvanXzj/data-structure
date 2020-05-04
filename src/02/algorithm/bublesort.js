@@ -64,14 +64,52 @@ function bubbleSortV3(arr) {
     return arr
 }
 
-let array = [5,8,6,3,9,2,1,7]
-console.log(bubbleSortV2(array))
+// 鸡尾酒排序
+function bubbleSortV4(arr) {
+    for(let i = 0; i < Math.floor(arr.length / 2); i++) {
+        let isSorted = true
 
-array = [3,4,2,1,5,6,7,8]
-console.log(bubbleSortV3(array))
+        // 去(左到右遍历)
+        for (let j = i; j < arr.length - i  - 1; j++) {
+            if (arr[j] > arr[j+1]) {
+                [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+                isSorted = false
+            }
+        }
+
+        if (isSorted) {
+            break
+        }
+
+        // 回（右到左遍历）
+        for(let j = arr.length-i-1; j > i; j--) {
+            if (arr[j] < arr[j-1]) {
+                [arr[j], arr[j-1]] = [arr[j-1], arr[j]]
+                isSorted = false
+            }
+        }
+
+        if (isSorted) {
+            break
+        }
+    }
+
+    return arr
+}
+
+// let array = [5,8,6,3,9,2,1,7]
+// console.log(bubbleSortV2(array))
+
+// array = [3,4,2,1,5,6,7,8]
+// console.log(bubbleSortV3(array))
+
+// array = [2,3,4,5,6,7,8,1]
+// console.log(bubbleSortV4(array))
+
 
 module.exports = {
     bubbleSort,
     bubbleSortV2,
-    bubbleSortV3
+    bubbleSortV3,
+    bubbleSortV4
 }
