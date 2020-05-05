@@ -61,7 +61,7 @@ function quickSort2(arr) {
     const right = []
     const pivot = arr[0]
 
-    for(let i = 1; i < arr.length; i++) {
+    for(let i = 1; i < arr.length; i++) { // start from i = 1
         if (arr[i] < pivot) {
             left.push(arr[i])
         } else {
