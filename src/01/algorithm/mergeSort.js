@@ -41,7 +41,9 @@ function merge(left, right) {
     return result
 }
 
-const array = [61, 85, 19, 88, 68, 8, 70, 29]
-const sortedArray = mergeSort(array)
+module.exports = mergeSort
 
-console.log(sortedArray) // [ 8, 19, 29, 61, 68, 70, 85, 88 ]
+// const array = [61, 85, 19, 88, 68, 8, 70, 29]
+// const sortedArray = mergeSort(array)
+
+// console.log(sortedArray) // [ 8, 19, 29, 61, 68, 70, 85, 88 ]

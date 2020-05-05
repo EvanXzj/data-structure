@@ -33,6 +33,8 @@ function radixSort(arr) {
     return arr
 }
 
-const array = [3, 44, 5, 15, 36, 26, 48, 38, 44, 50, 46, 2, 19]
-const sortedArray = radixSort(array)
-console.log(sortedArray)    // [ 2, 3, 5, 15, 19, 26, 36, 38, 44, 44, 46, 48, 50 ]
+module.exports = radixSort
+
+// const array = [3, 44, 5, 15, 36, 26, 48, 38, 44, 50, 46, 2, 19]
+// const sortedArray = radixSort(array)
+// console.log(sortedArray)    // [ 2, 3, 5, 15, 19, 26, 36, 38, 44, 44, 46, 48, 50 ]

@@ -64,11 +64,11 @@ function bubbleSortV3(arr) {
     return arr
 }
 
-let array = [5,8,6,3,9,2,1,7]
-console.log(bubbleSortV2(array))
+// let array = [5,8,6,3,9,2,1,7]
+// console.log(bubbleSortV2(array))
 
-array = [3,4,2,1,5,6,7,8]
-console.log(bubbleSortV3(array))
+// array = [3,4,2,1,5,6,7,8]
+// console.log(bubbleSortV3(array))
 
 module.exports = {
     bubbleSort,

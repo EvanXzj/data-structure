@@ -39,5 +39,7 @@ function heapSort(arr) {
     return arr
 }
 
-const arr = [,50, 10, 90, 30, 70, 40, 80, 60, 20]
-console.log(heapSort(arr))
+module.exports = heapSort
+
+// const arr = [,50, 10, 90, 30, 70, 40, 80, 60, 20]
+// console.log(heapSort(arr))

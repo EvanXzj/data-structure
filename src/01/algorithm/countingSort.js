@@ -31,9 +31,9 @@ function countingSort(arr) {
 
 function countingSortV2(arr) {
     const maxValue = Math.max(...arr),
-          bucket = new Array(maxValue + 1).fill(0),
-          arrLen = arr.length,
-          bucketLen = maxValue + 1
+        bucket = new Array(maxValue + 1).fill(0),
+        arrLen = arr.length,
+        bucketLen = maxValue + 1
     let sortedIndex = 0
 
     for (let i = 0; i < arrLen; ++i) {
@@ -50,6 +50,11 @@ function countingSortV2(arr) {
     return arr
 }
 
-const array = [4,4,3,4,4,3,2,3,2,0,1]
-const sortedArray = countingSort(array)
-console.log(sortedArray)    // [ 0, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 ]
+module.exports = {
+    countingSort,
+    countingSortV2
+}
+
+// const array = [4,4,3,4,4,3,2,3,2,0,1]
+// const sortedArray = countingSort(array)
+// console.log(sortedArray)    // [ 0, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 ]

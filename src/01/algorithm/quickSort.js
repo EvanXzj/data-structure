@@ -41,9 +41,9 @@ function quickSort(arr) {
     return arr
 }
 
-const array = [44, 75, 23, 43, 55, 12, 64, 77, 33]
-const sortedArray = quickSort(array)
-console.log(sortedArray) // [ 12, 23, 33, 43, 45, 55, 64, 75, 77 ]
+// const array = [44, 75, 23, 43, 55, 12, 64, 77, 33]
+// const sortedArray = quickSort(array)
+// console.log(sortedArray) // [ 12, 23, 33, 43, 45, 55, 64, 75, 77 ]
 
 /**
  * 相对简单一点的写法
@@ -72,5 +72,10 @@ function quickSort2(arr) {
     return [...quickSort2(left), pivot, ...quickSort2(right)]
 }
 
-const array2= [44, 75, 23, 43, 55, 12, 64, 77, 33]
-console.log(quickSort2(array2)) // [ 12, 23, 33, 43, 45, 55, 64, 75, 77 ]
+module.exports = {
+    quickSort,
+    quickSort2
+}
+
+// const array2= [44, 75, 23, 43, 55, 12, 64, 77, 33]
+// console.log(quickSort2(array2)) // [ 12, 23, 33, 43, 45, 55, 64, 75, 77 ]
